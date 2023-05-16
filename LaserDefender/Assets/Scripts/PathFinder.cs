@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-
-    [SerializeField] WaveConfigSO waveConfig;
+    EnemySpawner enemySpawner;
+    WaveConfigSO waveConfig;
     List<Transform> wayPoints;
     int wayPointIndex = 0;
 
+
+    void Awake()
+    {
+        enemySpawner= FindObjectOfType<EnemySpawner>();
+    }
     void Start()
     {
+        waveConfig = enemySpawner.getCurrentWave(); 
         wayPoints = waveConfig.GetWayPoints();
         transform.position = wayPoints[wayPointIndex].position;
     }
@@ -25,7 +31,7 @@ public class PathFinder : MonoBehaviour
         if (wayPointIndex < wayPoints.Count)
         {
             Vector3 targetPosition = wayPoints[wayPointIndex].position;
-            float delta = waveConfig.getMoveSpeed() * Time.deltaTime;
+            float delta = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
             if(transform.position == targetPosition)
             {
