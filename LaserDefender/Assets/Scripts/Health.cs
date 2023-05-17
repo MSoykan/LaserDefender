@@ -62,7 +62,7 @@ public class Health : MonoBehaviour
         {
             scoreKeeper.resetScore();
         }
-        Destroy(gameObject);
+        Destroy(gameObject, 0.2f);
     }
 
     public int GetHealth()
