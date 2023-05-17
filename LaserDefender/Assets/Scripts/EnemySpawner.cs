@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Instantiate(currentWave.GetEnemyPrefab(i),// 2nd parameter is for spawning it in the desired place -
                         currentWave.GetStartingWayPoint().position, // -> If we dont specify the palce it will spawn -
-                        Quaternion.identity,
+                        Quaternion.Euler(0,0,180),
                         transform); // -> where enemy spawner transform position is
                     yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
                 }
