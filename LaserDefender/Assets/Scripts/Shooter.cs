@@ -20,6 +20,12 @@ public class Shooter : MonoBehaviour
     [HideInInspector] public bool isFiring;
 
     Coroutine firingCoroutine;
+    AudioPlayer audioPlayer;
+
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -67,10 +73,12 @@ public class Shooter : MonoBehaviour
                 //}
                 rb.velocity = ((transform.up * projectileSpeed));
             }
+            Destroy(instance, projectileLifeTime);
             float timeToNextProjectile = Random.Range(timeBetweenShots - shotTimeVariance,
                                                 timeBetweenShots + shotTimeVariance);
             timeToNextProjectile = Mathf.Clamp(timeToNextProjectile, minimumFiringRate, float.MaxValue);
-            Destroy(instance, projectileLifeTime);
+
+            audioPlayer.PlayShootingClip();
             yield return new WaitForSeconds(timeToNextProjectile);
         }
     }

@@ -27,7 +27,7 @@ public class CameraShake : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float strength = shakeCurve.Evaluate(elapsedTime / shakreDuration);    
-            transform.position = initialPosition + (Vector3)Random.insideUnitCircle * shakeMagnitude;
+            transform.position = initialPosition + (Vector3)Random.insideUnitCircle * strength;
             yield return new WaitForEndOfFrame();
         }
         transform.position=initialPosition;
