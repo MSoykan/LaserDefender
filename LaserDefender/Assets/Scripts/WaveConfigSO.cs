@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Wave Config", fileName = "New Wave Config")]
 public class WaveConfigSO : ScriptableObject
 {
-    [SerializeField] List<GameObject> enemyPrefabs;
-    [SerializeField] Transform pathPrefab; //pathPrefab is a transform apparently(it contains waypoints 
+    [SerializeField] List<GameObject> enemyPrefabs;// prefab ve sayýlarý(birer tane prefan deðil)
+    [SerializeField] Transform pathPrefab; //pathPrefab is a transform apparently(it contains waypoints) 
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float timeBetweenEnemySpawns = 1f;
     [SerializeField] float spawnTimeVariance = 0f;
