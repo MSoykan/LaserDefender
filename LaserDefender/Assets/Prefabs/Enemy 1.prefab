@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 824137372}
   - component: {fileID: 824137373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyGreen3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1651776637
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a50b7ccb5f605f43961fe55907819cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7797564268851754805}
   - component: {fileID: 5884787137818387423}
   - component: {fileID: 1436919252568749812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,3 +181,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23e72f53209be24890ebda6b48916c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
