@@ -12,7 +12,8 @@ GamePlay: Save Earth!
 
 ![Capt2ure](https://github.com/MSoykan/LaserDefender/assets/44510111/42a14b28-f771-4c4a-84dc-e40bad2a7fa0)
 
-End Screen:
+Game Over!:
 
 
-![gamePlay](https://github.com/MSoykan/LaserDefender/assets/44510111/05bc50a8-be61-4c21-b8a4-0cb029cdeee9)
+![gameOver](https://github.com/MSoykan/LaserDefender/assets/44510111/2b6f478d-f8bf-4414-b9c0-84d7742828e2)
+
