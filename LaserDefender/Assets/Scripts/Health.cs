@@ -62,7 +62,6 @@ public class Health : MonoBehaviour
         }
         else
         {
-            scoreKeeper.resetScore();
             levelManager.LoadGameOverMenu();
         }
         Destroy(gameObject, 0.2f);

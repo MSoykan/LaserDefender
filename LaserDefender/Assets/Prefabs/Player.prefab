@@ -83,7 +83,7 @@ MonoBehaviour:
   moveSpeed: 10
   paddingLeft: 0.5
   paddingRight: 0.5
-  paddingTop: 5
+  paddingTop: 8
   paddingBottom: 2
 --- !u!50 &6069914053596371041
 Rigidbody2D:
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23e72f53209be24890ebda6b48916c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   shipScore: 50
   hitEffect: {fileID: 113396511295421467, guid: c96686506cffc9045b3fa2710469cdde, type: 3}
   applyCameraShake: 1
@@ -151,13 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8702808933942425574, guid: 5521ce900165767498a3628d8f42974e, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 12
   projectileLifeTime: 5
-  firingRate: 0.2
-  timeBetweenShots: 0.5
-  shotTimeVariance: 0.3
+  timeBetweenShots: 0.1
+  shotTimeVariance: 0
   minimumFiringRate: 0.1
-  useAI: 1
+  useAI: 0
   isFiring: 0
 --- !u!1 &7362951506123136109
 GameObject:
