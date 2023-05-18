@@ -603,7 +603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b5288943beaa8549bdf672ca4ef90f6, type: 2}
   m_sharedMaterial: {fileID: 3451957277512215108, guid: 2b5288943beaa8549bdf672ca4ef90f6, type: 2}
@@ -737,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6307855374626109110, guid: 6ea4aaae184295c49bb1861cfc98a1ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ea4aaae184295c49bb1861cfc98a1ae, type: 3}
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 872633316}
   - component: {fileID: 872633315}
   m_Layer: 5
-  m_Name: Quit Button
+  m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,7 +1024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872633316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1908437123}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &872633316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b5288943beaa8549bdf672ca4ef90f6, type: 2}
   m_sharedMaterial: {fileID: 3451957277512215108, guid: 2b5288943beaa8549bdf672ca4ef90f6, type: 2}
@@ -1289,7 +1301,7 @@ GameObject:
   - component: {fileID: 1716351180}
   - component: {fileID: 1716351179}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1359,7 +1371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1716351180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1908437123}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1716351180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,8 +1458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012992, y: -250.287}
-  m_SizeDelta: {x: 953.56, y: 388.742}
+  m_AnchoredPosition: {x: -0.000012992, y: -275.652}
+  m_SizeDelta: {x: 953.56, y: 343.951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797803679
 MonoBehaviour:
@@ -1463,3 +1487,83 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1001 &1908437122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 123.36399
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 255.50781
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.12418521
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694258, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365457510406694260, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+--- !u!114 &1908437123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3365457510406694261, guid: 69bcdea2916760543b2ad738c8d57a1f, type: 3}
+  m_PrefabInstance: {fileID: 1908437122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf74b62682ed33b40a0143bc3be3911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
