@@ -3,8 +3,7 @@
 
 Menu:
 
-![menu](https://github.com/MSoykan/LaserDefender/assets/44510111/2159bacc-7373-4585-a48b-ee17bbab16b5)
-
+![MainMenu](https://github.com/MSoykan/LaserDefender/assets/44510111/29dc1721-5a58-4ddb-9184-73e2a6362818)
 
 
 GamePlay: Save Earth!
