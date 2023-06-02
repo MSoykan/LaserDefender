@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
         DamageDealer damageDealer = collision.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
-            TakeDamage(damageDealer.GetDamage());//Take damage
+            TakeDamage(damageDealer.GetDamageAmount());//Take damage
             ShakeCamera();
             audioPlayer.PlayExplosionClip();
             PlayHitEffect();
@@ -42,7 +42,7 @@ public class Health : MonoBehaviour
     }
     void TakeDamage(int damageTaken)
     {
-        Debug.Log("My score is " + scoreKeeper.GetScore());
+        //Debug.Log("My score is " + scoreKeeper.GetScore());
         health -= damageTaken;
         if (transform.tag == "Player")
         {

@@ -12,6 +12,26 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip explosionClip;
     [SerializeField][Range(0f, 1f)] float explosionVolume = 1.0f;
 
+    static  AudioPlayer instance; // Singleton on large projects is an absolute nightmare.
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
+    void ManageSingleton()
+    {
+        if(instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // Dont destroy the gameobjet upon loading any other scene
+        }
+    }
+
     public void PlayShootingClip()
     {
         PlayClip(shootingClip, shootingVolume);

@@ -11,8 +11,8 @@ public class Shooter : MonoBehaviour
     //[SerializeField] float firingRate = 0.1f;
 
     [Header("AI")]
-    [SerializeField] float timeBetweenShots = 0.5f;
-    [SerializeField] float shotTimeVariance = 0.3f;
+    [SerializeField] float timeBetweenShots = 2f;
+    [SerializeField] float shotTimeVariance = 0.01f;
     [SerializeField] float minimumFiringRate = 0.1f;
     [SerializeField] bool useAI;
 
@@ -55,31 +55,75 @@ public class Shooter : MonoBehaviour
 
     IEnumerator FireContinuously()
     {
+        GameObject instance = null;
         while (true)
         {
-            GameObject instance = Instantiate(projectilePrefab,
+            if (!useAI)
+            {
+                Debug.Log("Trying to fetch from pool");
+                instance = LaserObjectPool.instance.GetPooledObject();
+                if (instance != null)
+                {
+                    Debug.Log("Fetched from pool");
+
+                    instance.transform.position = transform.position;
+                    instance.SetActive(true);
+
+
+                    //Instantiate(projectilePrefab,
+                    //                              transform.position,
+                    //                              Quaternion.identity);
+
+                    Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        //if (useAI)
+                        //{
+                        //    rb.velocity = (-(transform.up * projectileSPeed));
+                        //}
+                        //else
+                        //{
+                        //}
+                        rb.velocity = ((transform.up * projectileSpeed));
+                    }
+                    //Destroy(instance, projectileLifeTime);
+                    float timeToNextProjectile = Random.Range(timeBetweenShots - shotTimeVariance,
+                                                        timeBetweenShots + shotTimeVariance);
+                    timeToNextProjectile = Mathf.Clamp(timeToNextProjectile, minimumFiringRate, float.MaxValue);
+                    Debug.Log("Time to next projectile is :" + timeToNextProjectile);
+                    audioPlayer.PlayShootingClip();
+                    yield return new WaitForSeconds(timeToNextProjectile);
+                    //instance.SetActive(false);
+                    Debug.Log("Setting active laser to false");
+                }
+
+                else
+                {
+                    Debug.Log("The return value of GetObjectFromPool was null.");
+                }
+
+            }
+            else
+            {
+                instance = Instantiate(projectilePrefab,
                                               transform.position,
                                               Quaternion.identity);
+                Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.velocity = ((transform.up * projectileSpeed));
 
-            Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                //if (useAI)
-                //{
-                //    rb.velocity = (-(transform.up * projectileSPeed));
-                //}
-                //else
-                //{
-                //}
-                rb.velocity = ((transform.up * projectileSpeed));
+                    //rb.velocity = ((transform.up * projectileSpeed));
+                }
+                Destroy(instance, projectileLifeTime);
+                float timeToNextProjectile = Random.Range(timeBetweenShots - shotTimeVariance,
+                                                    timeBetweenShots + shotTimeVariance);
+                timeToNextProjectile = Mathf.Clamp(timeToNextProjectile, minimumFiringRate, float.MaxValue);
+                audioPlayer.PlayShootingClip();
+                yield return new WaitForSeconds(timeToNextProjectile);
+
             }
-            Destroy(instance, projectileLifeTime);
-            float timeToNextProjectile = Random.Range(timeBetweenShots - shotTimeVariance,
-                                                timeBetweenShots + shotTimeVariance);
-            timeToNextProjectile = Mathf.Clamp(timeToNextProjectile, minimumFiringRate, float.MaxValue);
-
-            audioPlayer.PlayShootingClip();
-            yield return new WaitForSeconds(timeToNextProjectile);
         }
+
     }
 }
